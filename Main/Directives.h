@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <conio.h>
 #include <math.h>
+using namespace std;
 struct People {
 	int Number, Heigth, ClothesNumber, ShoesNumber;
 	double Weight;
