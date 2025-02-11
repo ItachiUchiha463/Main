@@ -10,3 +10,5 @@ struct People {
 	double Weight;
 	char Surname[40], Name[30];
 };
+
+
