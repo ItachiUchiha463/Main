@@ -50,20 +50,25 @@ void SurnameOutputBySize(People& people) {
         }
         File.close();
 
-        cout << setw(30) << "Люди з однаковою вагою та номером взуття";
-
+        People buffer[15];
+        int count = 0;
         bool found = false;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (sortu[i].Weight == sortu[j].Weight && sortu[i].ShoesNumber == sortu[j].ShoesNumber) {
-                    cout << sortu[i].Surname;
+        for (int i = 0; i < n; i++) {
+                if (sortu[i].Weight == sortu[i].ShoesNumber) {
+                    buffer[count] = sortu[i];
+                    count++;
                     found = true;
                 }
-            }
         }
 
         if (!found) {
-            cout << "Немає людей з однаковою вагою та розміром взуття.";
+            cout << "Немає людей з однаковою вагою та розміром взуття." << endl;
+        }
+        else {
+            cout << "Люди з однаковою вагою та номером взуття" << endl;
+            for (int i = 0; i < count; i++) {
+                cout << buffer[i].Surname << endl;
+            }
         }
     }
 }
