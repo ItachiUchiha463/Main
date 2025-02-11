@@ -2,7 +2,7 @@
 
 void Read(People& people) {
     fstream f;
-    f.open("Employee.dat", ios::in);
+    f.open("People.dat", ios::in);
     if (!f.is_open())
         cout << "Файл не відкрився!\n";
     else
@@ -35,15 +35,33 @@ double calculateAvWeight(People& people, int count) {
 }
 
 void filterPeople(People& people) {
+
+    fstream f;
+    f.open("People.dat", ios::in); 
     int filteredCount = 0;
+    double sumH=0;
+    double sumW=0;
     int count = 0;
     People filtered[100];
+    if (!f.is_open())
+        cout << "Файл не відкрився!\n";
+    else
+    {
+        f.seekg(0);
+        while (f.read((char*)&people, sizeof people)) {
+            sumH += people.Heigth;
+            sumW += people.Weight;
+            count++;
+        }
+        f.close();
 
+    }
     double avgHeight = calculateAvHeight(people, count);
     double avgWeight = calculateAvWeight(people, count);
-    for (int i = 0; i < count; ++i) {
+    while (f.read((char*)&people, sizeof people)) {
         if (abs(people.Heigth - avgHeight) <= 0.10 * avgHeight && abs(people.Weight - avgWeight) <= 0.05 * avgWeight)
         {
+
             filtered[filteredCount] = people;
             filteredCount++;
         }
