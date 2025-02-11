@@ -17,22 +17,6 @@ void Read(People& people) {
     }
 }
 
-double calculateAvHeight(People& people, int count) {
-    double sum = 0;
-    for (int i = 0; i < count; ++i) {
-        sum += people.Heigth;
-    }
-    return sum / count;
-}
-
-double calculateAvWeight(People& people, int count) {
-    double sum = 0;
-    for (int i = 0; i < count; ++i) {
-        sum += people.Weight;
-    }
-    return sum / count;
-}
-
 void filterPeople(People& people) {
 
     fstream f;
@@ -52,15 +36,16 @@ void filterPeople(People& people) {
             sumW += people.Weight;
             count++;
         }
-        f.close();
-
     }
-    double avgHeight = calculateAvHeight(people, count);
-    double avgWeight = calculateAvWeight(people, count);
+    double avgHeight = sumH/count;
+    double avgWeight = sumW / count;
+    f.clear();
+    f.seekg(0);
     while (f.read((char*)&people, sizeof people)) {
+        cout << people.Heigth << endl;
         if (abs(people.Heigth - avgHeight) <= 0.10 * avgHeight && abs(people.Weight - avgWeight) <= 0.05 * avgWeight)
         {
-
+            
             filtered[filteredCount] = people;
             filteredCount++;
         }
