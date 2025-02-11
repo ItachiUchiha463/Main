@@ -1,4 +1,5 @@
 ﻿#include "Kovalchuk.h"
+#include "Rudyi.h"
 #include"OOO.h"
 int main() {
 	setlocale(0, "UKR");
@@ -21,7 +22,7 @@ int main() {
 		case 2: { AppendToFile(people); break; }
 		case 3: { Read(people); break; }
 		case 4: { break; }
-		case 5: { break; }
+		case 5: { SurnameOutputBySize(people); break; }
 		case 6: { break; }
 		case 7: { filterPeople(people); break; }
 		case 8: { break; }
