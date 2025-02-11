@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="hamryk.cpp" />
     <ClCompile Include="Kovalchuk.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OOO.cpp" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Directives.h" />
+    <ClInclude Include="hamryk.h" />
     <ClInclude Include="Kovalchuk.h" />
     <ClInclude Include="OOO.h" />
     <ClInclude Include="Rudyi.h" />
