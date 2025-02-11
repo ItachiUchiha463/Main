@@ -1,4 +1,5 @@
 ﻿#include "Kovalchuk.h"
+#include "hamryk.h"
 #include"OOO.h"
 int main() {
 	setlocale(0, "UKR");
@@ -22,9 +23,10 @@ int main() {
 		case 3: { Read(people); break; }
 		case 4: { break; }
 		case 5: { break; }
-		case 6: { break; }
+		case 6: { priz(); break; }
 		case 7: { filterPeople(people); break; }
-		case 8: { break; }
+		case 8: {minRist();
+				 MaxVzMaxVaga(); break; }
 
 		}
 	}

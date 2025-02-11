@@ -1,5 +1,4 @@
-#include "Directives.h"
-
+#include "hamryk.h"
 void priz() {
     ifstream f("People.dat", ios::in);
     if (!f.is_open()) {
