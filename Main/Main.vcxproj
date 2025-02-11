@@ -130,11 +130,13 @@
     <ClCompile Include="Kovalchuk.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OOO.cpp" />
+    <ClCompile Include="Rudyi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Directives.h" />
     <ClInclude Include="Kovalchuk.h" />
     <ClInclude Include="OOO.h" />
+    <ClInclude Include="Rudyi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
