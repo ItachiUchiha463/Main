@@ -11,7 +11,6 @@ void Read(People& people) {
         cout << setw(15) << left << "Номер" << setw(15) << "Прізвище" << setw(15) << "Ім'я" << left << setw(15) << "Висота" << setw(15) << "Вага" << setw(15) << "Номер одягу" << setw(15) << "Номер взуття" << endl;
         while (f.read((char*)&people, sizeof people)) {
             cout << setw(15) << people.Number << setw(15) << people.Surname << setw(15) << people.Name << setw(15) << people.Heigth << left << setw(15) << people.Weight << setw(15) << people.ClothesNumber << setw(15) << people.ShoesNumber << endl;
-
         }
         f.close();
 
