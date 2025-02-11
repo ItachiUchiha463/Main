@@ -1,21 +1,21 @@
-#include "Kovalchuk.h"
+ï»¿#include "Kovalchuk.h"
 void EnterOnePeople(People& people) {
-	cout << "Ââåäiòü íîìåð="; cin >> people.Number; cin.get();
-	cout << "Ââåäiòü ïðiçâèùå="; cin.getline(people.Surname, 40);
-	cout << "Ââåäiòü iì'ÿ="; cin.getline(people.Name, 30);
-	cout << "Ââåäiòü ðiñò="; cin >> people.Heigth; cin.get();
-	cout << "Ââåäiòü âàãó="; cin >> people.Weight; cin.get();
-	cout << "Ââåäiòü íîìåð îäåæi="; cin >> people.ClothesNumber; cin.get();
-	cout << "Ââåäiòü íîìåð âçóòòÿ="; cin >> people.ShoesNumber; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€="; cin >> people.Number; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð¿Ñ€iÐ·Ð²Ð¸Ñ‰Ðµ="; cin.getline(people.Surname, 40);
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ iÐ¼'Ñ="; cin.getline(people.Name, 30);
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ñ€iÑÑ‚="; cin >> people.Heigth; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð²Ð°Ð³Ñƒ="; cin >> people.Weight; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ð¾Ð´ÐµÐ¶i="; cin >> people.ClothesNumber; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð·ÑƒÑ‚Ñ‚Ñ="; cin >> people.ShoesNumber; cin.get();
 	
 }
 void CreateFile(People& people) {
 	fstream f;
 	f.open("People.dat", ios::out);
 	int kilk;
-	cout << "Ââåäiòü êiëüêiñòü ëþäåé êîòðó õî÷åòå äîáàâèòè="; cin >> kilk; cin.get();
+	cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ ÐºiÐ»ÑŒÐºiÑÑ‚ÑŒ Ð»ÑŽÐ´ÐµÐ¹ ÐºÐ¾Ñ‚Ñ€Ñƒ Ñ…Ð¾Ñ‡ÐµÑ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚Ð¸="; cin >> kilk; cin.get();
 	for (int i = 0; i < kilk; i++) {
-		cout << "Ëþäèíà " << i + 1 << endl;
+		cout << "Ð›ÑŽÐ´Ð¸Ð½Ð° " << i + 1 << endl;
 		EnterOnePeople(people);
 		f.write((char*)&people, sizeof(people));
 	}
@@ -26,16 +26,16 @@ void AppendToFile(People& people) {
 	fstream f, f1;
 	f.open("People.dat", ios::in);
 	if (!f.is_open())
-		cout << "Íå âäàëîñÿ â³äêðèòè ôàéë äëÿ çàïèñó." << endl;
+		cout << "ÐÐµ Ð²Ð´Ð°Ð»Ð¾ÑÑ Ð²Ñ–Ð´ÐºÑ€Ð¸Ñ‚Ð¸ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÑƒ." << endl;
 	else {
 		int kilk;
 		f1.open("Buffer.dat", ios::out);
 		while (f.read((char*)&people, sizeof people))
 			f1.write((char*)&people, sizeof people);
-		cout << "Ââåäiòü êiëüêiñòü ëþäåé êîòðó õî÷åòå äîçàïèñàòè="; cin >> kilk; cin.get();
-		cout << "Ââåäiòü ëþäåé" << endl;
+		cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ ÐºiÐ»ÑŒÐºiÑÑ‚ÑŒ Ð»ÑŽÐ´ÐµÐ¹ ÐºÐ¾Ñ‚Ñ€Ñƒ Ñ…Ð¾Ñ‡ÐµÑ‚Ðµ Ð´Ð¾Ð·Ð°Ð¿Ð¸ÑÐ°Ñ‚Ð¸="; cin >> kilk; cin.get();
+		cout << "Ð’Ð²ÐµÐ´iÑ‚ÑŒ Ð»ÑŽÐ´ÐµÐ¹" << endl;
 		for (int i = 0; i < kilk; i++) {
-			cout << "Ëþäèíà " << i + 1 << endl;
+			cout << "Ð›ÑŽÐ´Ð¸Ð½Ð° " << i + 1 << endl;
 			EnterOnePeople(people);
 			f1.write((char*)&people, sizeof(people));
 		}
