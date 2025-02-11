@@ -55,10 +55,6 @@ void filterPeople(People& people) {
     cout << "Середня вага: " << avgWeight << endl;
     cout << "Люди, якi вiдповiдають критерiям:" << endl;
     for (int i = 0; i < filteredCount; ++i) {
-        cout << "Рiст: " << filtered[i].Heigth << ", Вага: " << filtered[i].Weight << endl;
- 
-    }
-    for (int i = 0; i < filteredCount; ++i) {
         cout << left << setw(15) << filtered[i].Surname << setw(15) << filtered[i].Name << "Зріст: " << setw(6) << filtered[i].Heigth << " Вага: " << filtered[i].Weight << " кг" << endl;
     }
 }

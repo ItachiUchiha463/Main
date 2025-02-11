@@ -1,6 +1,7 @@
 ﻿#include "Kovalchuk.h"
 #include "hamryk.h"
 #include"OOO.h"
+#include"rudyi.h"
 int main() {
 	setlocale(0, "UKR");
 	int choice=1;
@@ -21,8 +22,8 @@ int main() {
 		case 1: { CreateFile(people); break; }
 		case 2: { AppendToFile(people); break; }
 		case 3: { Read(people); break; }
-		case 4: { break; }
-		case 5: { break; }
+		case 4: { SortingByHeight(people);  break; }
+		case 5: { SurnameOutputBySize(people);  break; }
 		case 6: { priz(); break; }
 		case 7: { filterPeople(people); break; }
 		case 8: {minRist();
