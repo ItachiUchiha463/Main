@@ -1,7 +1,7 @@
 ﻿#include "Kovalchuk.h"
 int main() {
 	setlocale(0, "UKR");
-	int choice;
+	int choice=1;
 	while (choice != 10) {
 		cout << "Виберiть операцію" << endl;
 		cout << "1-записати у файл" << endl;
