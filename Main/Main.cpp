@@ -1,4 +1,5 @@
 ﻿#include "Kovalchuk.h"
+#include"OOO.h"
 int main() {
 	setlocale(0, "UKR");
 	int choice=1;
@@ -18,7 +19,7 @@ int main() {
 		switch (choice) {
 		case 1: { CreateFile(people); break; }
 		case 2: { AppendToFile(people); break; }
-		case 3: { break; }
+		case 3: { Read(people); break; }
 		case 4: { break; }
 		case 5: { break; }
 		case 6: { break; }
