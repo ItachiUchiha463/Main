@@ -24,9 +24,9 @@ void SortingByHeight(People& people) {
                 }
             }
         }
-        cout << setw(30) << "Список людей після сортування за зростом";
+        cout << setw(30) << "Список людей після сортування за зростом"<<endl;
         for (int i = 0; i < n; i++) {
-            cout << sort[i].Name << setw(10) << sort[i].Surname << setw(15)
+            cout << sort[i].Name << setw(15) << sort[i].Surname << setw(15)
                 << "Зріст: " << sort[i].Heigth << " см" << setw(15) << "Вага:"
                 << sort[i].Weight << " кг" << setw(15) << "Взуття: " << sort[i].ShoesNumber
                 << setw(15) << "Одяг: " << sort[i].ClothesNumber << setw(15) << "Номер: " <<
